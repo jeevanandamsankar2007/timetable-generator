@@ -1,0 +1,217 @@
+.timetable-page {
+  width: 100%;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.back-btn:hover {
+  background-color: var(--background);
+  transform: translateX(-2px);
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.timetable-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 900px; /* Ensure it scrolls on small screens */
+}
+
+.timetable th {
+  background-color: var(--background);
+  padding: 1rem 0.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.timetable td {
+  border: 1px solid var(--border);
+  height: 100px;
+  padding: 0;
+  vertical-align: middle;
+  position: relative;
+}
+
+.day-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+  background-color: var(--background);
+  width: 100px;
+}
+
+.period-cell {
+  width: calc((100% - 100px) / 9); /* Approximate width based on mock data length */
+  transition: background-color var(--transition-fast);
+}
+
+.period-cell:hover {
+  background-color: var(--background);
+}
+
+.class-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  height: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: rgba(37, 99, 235, 0.05); /* very light primary */
+}
+
+.period-cell:hover .class-content {
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+.subject {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.class-name {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.room {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  background-color: var(--surface);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.print-template {
+  background-color: white;
+  color: black;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  margin: 0 auto;
+  font-family: 'Times New Roman', Times, serif; /* Match the academic look */
+}
+
+.college-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.timetable-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-row {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.detail-label {
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.detail-colon {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.detail-value {
+  flex: 1;
+}
+
+.template-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.template-table th, .template-table td {
+  border: 1px solid black;
+  padding: 0.5rem;
+}
+
+.day-hour-header {
+  width: 100px;
+  font-weight: bold;
+}
+
+.template-table th {
+  background-color: white;
+  color: black;
+}
+
+.day-cell {
+  font-weight: bold;
+  background-color: white;
+}
+
+.period-cell {
+  height: 60px;
+  min-width: 80px;
+}
+
+.break-cell {
+  width: 50px;
+  padding: 0 !important;
+  vertical-align: middle;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  margin: auto;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-template {
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+  
+  @page {
+    size: landscape;
+    margin: 1cm;
+  }
+}
+

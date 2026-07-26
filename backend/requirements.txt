@@ -1,0 +1,48 @@
+# Core
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+python-dotenv==1.0.1
+pydantic[email]==2.9.0
+pydantic-settings==2.5.0
+
+# Database
+sqlalchemy==2.0.35
+pymysql==1.1.1
+cryptography==43.0.0
+alembic==1.13.2
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.2.0
+python-multipart==0.0.9
+
+# PDF Processing
+pdfplumber==0.11.4
+pdfminer.six==20231228
+camelot-py[cv]
+pymupdf
+
+# Data Processing
+pandas==2.2.3
+
+# OCR Pipeline
+pdf2image==1.17.0
+easyocr==1.7.2
+
+# Excel
+openpyxl==3.1.5
+
+# PDF Generation
+fpdf2==2.8.1
+
+# PDF Generation
+fpdf2==2.8.1
+
+# Logging & Utils
+loguru==0.7.2
+
+# Testing
+pytest==8.3.3
+httpx==0.27.2
+reportlab==5.0.0

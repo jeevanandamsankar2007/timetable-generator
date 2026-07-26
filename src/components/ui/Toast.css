@@ -1,0 +1,34 @@
+.toast {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  box-shadow: var(--shadow-md);
+  min-width: 250px;
+  gap: 0.75rem;
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.toast-close {
+  color: var(--text-tertiary);
+  padding: 0.25rem;
+  display: flex;
+  border-radius: var(--radius-sm);
+}
+
+.toast-close:hover {
+  background-color: var(--background);
+  color: var(--text-secondary);
+}
+
+.toast-success-icon { color: var(--success); }
+.toast-warning-icon { color: var(--warning); }
+.toast-error-icon { color: var(--error); }
