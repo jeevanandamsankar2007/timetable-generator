@@ -54,7 +54,7 @@ class PreviewService:
         pdf_url = None
         if upload and upload.stored_filename and os.path.exists(upload.stored_filename):
             filename = os.path.basename(upload.stored_filename)
-            pdf_url = f"http://localhost:8000/uploads/{filename}"
+            pdf_url = f"/uploads/{filename}"
 
         return PreviewResponse(
             upload_id=upload_id,

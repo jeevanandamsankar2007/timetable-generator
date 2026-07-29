@@ -75,3 +75,8 @@ def health_check():
     }
 
 logger.info(f"Started {settings.APP_NAME} v{settings.APP_VERSION}")
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app.main:app", host=settings.HOST, port=settings.PORT, reload=settings.DEBUG)
+

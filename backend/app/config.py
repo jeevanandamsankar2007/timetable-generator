@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
     DEBUG: bool = True
 
+    # Backend Network Server Settings
+    HOST: str = "0.0.0.0"
+    PORT: int = 8000
+
     # Database
     DB_HOST: str = "localhost"
     DB_PORT: int = 3306
@@ -30,7 +34,7 @@ class Settings(BaseSettings):
     MAX_UPLOAD_SIZE_MB: int = 50
 
     # CORS
-    CORS_ORIGINS: str = "http://localhost:5173,http://localhost:3000"
+    CORS_ORIGINS: str = "*"
 
     # Logging
     LOG_FILE: str = "logs/app.log"
@@ -44,11 +48,15 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> List[str]:
         """Parse CORS origins into a list."""
+        if self.CORS_ORIGINS == "*":
+            return ["*"]
         return [origin.strip() for origin in self.CORS_ORIGINS.split(",")]
 
     class Config:
-        env_file = ".env"
+        env_file = (".env", "../.env")
         env_file_encoding = "utf-8"
+        extra = "ignore"
 
 
 settings = Settings()
+
